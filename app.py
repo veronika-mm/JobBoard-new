@@ -217,8 +217,9 @@ def delete(id):
 
 @app.route('/jobs', methods=['GET', 'POST'])
 def jobs():
+    form=JobForm()
     our_jobs = Job.query.order_by(Job.date_posted.desc()).all()
-    return render_template('jobs.html', our_jobs=our_jobs)
+    return render_template('jobs.html', form=form, our_jobs=our_jobs)
 
 
 

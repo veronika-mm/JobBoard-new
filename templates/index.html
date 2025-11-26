@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
-   {% for posts in posts %}
-      <h1>{{ posts.title }}</h1>
-      <p>პოსტი გამოქვეყნებულია {{ posts.author }} -ის მიერ</p>
-      <p> თარიღი- {{ posts.post_date }}</p>
-      <p>{{ posts.content }}</p>
-   {% endfor %}
+<div class="container mt-4">
+     <h2> Find Your Job Here </h2>
+     <div class="row">
+         <div class="col-md-4">
+             <img src="{{ url_for('static', filename='main_photo/photoo.jpg') }}" class="img-humbnail" width="1000">
+
+         </div>
+         <div>
+
+
+
 {% endblock %}
