@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+       <form method="POST">
+           {{ form.hidden_tag() }}
+
+       </form>
+       <br>
+       <br>
+
+<table>
+    {% for our_job in our_jobs %}
+        <tr>
+            <td>
+                <li>
+                    <a href="{{ url_for('update', id= our_job.id) }}"> {{ our_job.id }} </a> - {{ our_job.title }} - {{ our_job.short_description }}-<a href=" {{url_for('delete', id= our_job.id) }}">delete</a>
+
+                </li>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+
+       <div>
+
+
+{% endblock %}
+
+
+
+

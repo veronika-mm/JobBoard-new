@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+   {% for posts in posts %}
+      <h1>{{ posts.title }}</h1>
+      <p>პოსტი გამოქვეყნებულია {{ posts.author }} -ის მიერ</p>
+      <p> თარიღი- {{ posts.post_date }}</p>
+      <p>{{ posts.content }}</p>
+   {% endfor %}
+{% endblock %}

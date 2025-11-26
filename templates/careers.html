@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+     <h2> Remote Jobs- career </h2>
+
+     {% if careers and careers.jobs %}
+         {%for job in careers.jobs[:20] %}
+         <div class="card mb-3">
+             <h3> {{job.title }}</h3>
+             <p> company - {{ job.company_name }}</p>
+             <p> {{ job.salary }}</p>
+             <p> {{ job.job_type }} </p>
+             <p> location: {{ job. candidate_required_location }} </p>
+             <a href="{{ job.url }}" target="_blank"> ვრცლად </a>
+         </div>
+         {% endfor %}
+     {% else %}
+         <p> ამჟამად ახალი ვაკანსიები არ გვაქვს</p>
+     {% endif %}
+
+
+
+{% endblock %}

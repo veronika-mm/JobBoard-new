@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+       <form method="POST">
+           {{ form.hidden_tag() }}
+           <div>
+               <p> Add Job </p>
+
+           </div>
+
+             <div class="mb-3">
+               {{ form.title.label(class="form-control-label") }}
+               {{ form.title(class="form-control") }}
+           </div>
+             <div class="mb-3">
+               {{ form.short_description.label(class="form-control-label") }}
+               {{ form.short_description(class="form-control") }}
+           </div>
+             <div class="mb-3">
+               {{ form.long_description.label(class="form-control-label") }}
+               {{ form.long_description(class="form-control") }}
+           </div>
+             <div class="mb-3">
+               {{ form.company.label(class="form-control-label") }}
+               {{ form.company(class="form-control") }}
+           </div>
+             <div class="mb-3">
+               {{ form.salary.label(class="form-control-label") }}
+               {{ form.salary(class="form-control") }}
+           </div>
+             <div class="mb-3">
+               {{ form.location.label(class="form-control-label") }}
+               {{ form.location(class="form-control") }}
+           </div>
+             <div class="mb-3">
+               {{ form.author.label(class="form-control-label") }}
+               {{ form.author(class="form-control") }}
+           </div>
+
+           <div class="mb-3">
+               {{ form.submit(class="btn btn-outline-dark") }}
+
+           </div>
+
+       </form>
+       <br>
+       <br>
+
+<table>
+    {% for our_job in our_jobs %}
+        <tr>
+            <td>
+                <li>
+                    <a href="{{ url_for('update', id= our_job.id) }}"> {{ our_job.id }} </a> - {{ our_job.title }} - {{ our_job.short_description }}-<a href=" {{url_for('delete', id= our_job.id) }}">delete</a>
+
+                </li>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+
+       <div>
+
+
+{% endblock %}
